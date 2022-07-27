@@ -1,5 +1,6 @@
 package com.dao;
 import com.entity.User;
+import com.entity.STA;
 import com.util.DBCoon;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -52,22 +53,21 @@ public class UserDaoImpl implements UserDao {
         return flag;
     }
 
-    public List<User> searchAll() {
-        List<User> list = new ArrayList<User>();
+    public List<STA> searchAll() {
+        List<STA> list = new ArrayList<STA>();
         try {
             DBCoon.init();
-            sql = "select * from user";
+            sql = "select * from sta";
             ResultSet rs = DBCoon.getUsers(sql);
             System.out.println("获取所有用户信息成功");
             while (rs.next()) {
-                User user = new User();
-                user.setId(rs.getInt("id"));
-                user.setName(rs.getString("name"));
-                user.setPwd(rs.getString("pwd"));
-                user.setSex(rs.getString("sex"));
-                user.setHome(rs.getString("home"));
-                user.setInfo(rs.getString("info"));
-                list.add(user);
+                STA sta = new STA();
+                sta.setId(rs.getInt("id"));
+                sta.setPower(rs.getFloat("power"));
+                sta.setTemperature(rs.getFloat("temperature"));
+                sta.setSoftpower(rs.getFloat("softpower"));
+                sta.setConnected(rs.getBoolean("connected"));
+                list.add(sta);
             }
         }catch (Exception e){
             System.out.println("获取所有用户信息失败");
