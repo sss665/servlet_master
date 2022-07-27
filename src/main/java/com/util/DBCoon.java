@@ -13,7 +13,7 @@ import java.sql.*;
  * */
 public class DBCoon {
     //serverTimezone=UTC设置连接时区，不设置可能会报时区错误
-    static String url = "jdbc:mysql://localhost:3306/Servlet?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8";
+    static String url = "jdbc:mysql://localhost:3306/hhh?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8";
     static String username = "root";
     //密码换成自己的
     static String password = "B10921";

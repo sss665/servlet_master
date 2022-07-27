@@ -57,7 +57,7 @@ public class UserDaoImpl implements UserDao {
         List<STA> list = new ArrayList<STA>();
         try {
             DBCoon.init();
-            sql = "select * from sta";
+            sql = "select * from stainfo";
             ResultSet rs = DBCoon.getUsers(sql);
             System.out.println("获取所有用户信息成功");
             while (rs.next()) {
@@ -98,11 +98,12 @@ public class UserDaoImpl implements UserDao {
         return flag;
     }
 
-    public boolean update(int id, String name, String pwd, String sex, String home, String info) {
+    public boolean update(int id, String power, String temperature, String softpower, String connected) {
         try {
             DBCoon.init();
-            sql = "update user set name=?,pwd=?,sex=?,home=?,info=? where id=?";
-            Object[] args={name,pwd,sex,home,info,id};
+            sql = "update stainfo set power=?,temperature=?,softpower=?,connected=? where id=?";
+            boolean connect = Boolean.valueOf(connected);
+            Object[] args={power,temperature,softpower,connect,id};
             int i = DBCoon.addUpdDel(sql,args);
             if (i>0){
                 flag=true;

@@ -85,10 +85,10 @@ public class STA {
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", name='" + power + '\'' +
-                ", pwd='" + temperature + '\'' +
-                ", sex='" + softpower + '\'' +
-                ", home='" +  connected+ '\'' +
+                ", power='" + power + '\'' +
+                ", temperature='" + temperature + '\'' +
+                ", softpower='" + softpower + '\'' +
+                ", connected='" +  connected+ '\'' +
                 '}';
     }
 }

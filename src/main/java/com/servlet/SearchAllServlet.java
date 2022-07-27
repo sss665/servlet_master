@@ -3,6 +3,7 @@ package com.servlet;
 import com.dao.UserDao;
 import com.dao.UserDaoImpl;
 import com.entity.User;
+import com.entity.STA;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -20,8 +21,8 @@ public class SearchAllServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         UserDao ud = new UserDaoImpl();
-        List<User> users = ud.searchAll();
-        req.setAttribute("users",users);
+        List<STA> stas = ud.searchAll();
+        req.setAttribute("stas",stas);
         System.out.println("查询全部用户成功");
         req.getRequestDispatcher("/showAll.jsp").forward(req, resp);
     }

@@ -20,15 +20,14 @@ public class UpdateServlet extends HttpServlet {
         String id = req.getParameter("id");
         int userId = Integer.parseInt(id);
 
-        String name = req.getParameter("name");
-        String pwd = req.getParameter("pwd");
-        String sex = req.getParameter("sex");
-        String home = req.getParameter("home");
-        String info = req.getParameter("info");
+        String power = req.getParameter("power");
+        String temperature = req.getParameter("temperature");
+        String softpower = req.getParameter("softpower");
+        String connected = req.getParameter("connected");
 
         UserDao ud = new UserDaoImpl();
 
-        if(ud.update(userId, name, pwd, sex, home, info)){
+        if(ud.update(userId, power, temperature, softpower, connected)){
             req.getRequestDispatcher("searchAll").forward(req, resp);
         }else{
             resp.sendRedirect("error.jsp");

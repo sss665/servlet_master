@@ -28,22 +28,20 @@
         <table  width="600" border="1" cellpadding="0" align="center" >
             <tr>
                 <th>ID</th>
-                <th>姓名</th>
-                <th>性别</th>
-                <th>密码</th>
-                <th>家乡</th>
-                <th>备注</th>
+                <th>power</th>
+                <th>tempture</th>
+                <th>softpower</th>
+                <th>connected</th>
                 <th>操作</th>
             </tr>
-            <c:forEach var="U" items="${users}">
+            <c:forEach var="U" items="${stas}">
                 <form action="update" method="post">
                     <tr>
                         <td><input type="text" value="${U.id}" name="id" ></td>
-                        <td><input type="text" value="${U.name}" name="name"></td>
-                        <td><input type="text" value="${U.sex}" name="sex"></td>
-                        <td><input type="text" value="${U.pwd}" name="pwd"></td>
-                        <td><input type="text" value="${U.home}" name="home"></td>
-                        <td><input type="text" value="${U.info}" name="info"></td>
+                        <td><input type="text" value="${U.power}" name="power"></td>
+                        <td><input type="text" value="${U.temperature}" name="temperature"></td>
+                        <td><input type="text" value="${U.softpower}" name="softpower"></td>
+                        <td><input type="text" value="${U.connected}" name="connected"></td>
                         <td><a href="delete?id=${U.id}">删除</a>  <input type="submit" value="更新"/></td>
                     </tr>
                 </form>
